@@ -6,7 +6,7 @@ import Reducers from './reducers/Reducers';
 import { Provider } from 'react-redux';
 import { Router, Stack, Scene } from 'react-native-router-flux';
 import StudentList from './components/StudentList';
-
+import styles from './Styles/MainStyle';
 
 const { width } = Dimensions.get('window');
 
@@ -18,7 +18,8 @@ export default class App extends Component {
       <Provider store={store}>
         <Router
           titleStyle={{ color: 'white' }}
-          navigationBarStyle={{ backgroundColor: '#183661', width }}
+          navigationBarStyle={{ backgroundColor: '#00897B', width }}
+          sceneStyle={styles.container}
         >
           <Stack key='root'>
             <Scene
