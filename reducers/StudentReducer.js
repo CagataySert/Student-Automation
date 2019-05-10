@@ -6,14 +6,18 @@ import {
 } from '../actions/Types';
 
 
-let initalState = [];
+let INITIAL_STATE = {
+    data: []
+};
 
-const StudentReducer = (state = initalState, { type, payload }) => {
+const StudentReducer = (state = INITIAL_STATE, { type, payload }) => {
+    console.log('reducer', state, type, payload);
+
     switch (type) {
         case GET_STUDENTS:
-            return console.log('get');
+            return { ...state, data: [...state.data, payload] };
         case ADD_NEW_STUDENT:
-            return console.log('add');
+            return { ...state, data: [payload] }
         case UPDATE_STUDENT:
             return console.log('update');
         case DELETE_STUDENT:

@@ -6,6 +6,7 @@ import Reducers from './reducers/Reducers';
 import { Provider } from 'react-redux';
 import { Router, Stack, Scene } from 'react-native-router-flux';
 import StudentList from './components/StudentList';
+import AddNewStudent from './components/AddNewStudent';
 import styles from './Styles/MainStyle';
 
 const { width } = Dimensions.get('window');
@@ -26,6 +27,12 @@ export default class App extends Component {
               key='studentList'
               component={StudentList}
               title='Student List'
+              initial
+            />
+            <Scene
+              key='addNewStudent'
+              component={AddNewStudent}
+              title='Add New Student'
             />
           </Stack>
         </Router>

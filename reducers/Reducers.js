@@ -3,6 +3,6 @@ import StudentReducer from './StudentReducer';
 import NoteReducer from './NoteReducer';
 
 export default Reducers = combineReducers({
-    Student: StudentReducer,
-    Note: NoteReducer
+    studentResponse: StudentReducer,
+    noteResponse: NoteReducer
 });

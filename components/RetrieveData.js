@@ -3,7 +3,7 @@ import { AsyncStorage } from 'react-native';
 export default _retrieveData = async () => {
     let response;
     try {
-        response = await AsyncStorage.getItem('studentAutomation') || 'none';
+        response = await AsyncStorage.getItem('studentAutomation1') || 'none';
     }
     catch (error) {
         console.log(error.message);
