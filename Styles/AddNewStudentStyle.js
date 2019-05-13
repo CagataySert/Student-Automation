@@ -22,11 +22,12 @@ export default StyleSheet.create({
     addButton: {
         marginTop: 10,
         alignItems: 'center',
+        justifyContent: 'center',
         height: 30,
         width: width * 0.3,
         borderColor: 'white',
         borderWidth: 1,
-        borderRadius: 25,
+        borderRadius: 10,
         backgroundColor: 'black',
         color: 'white'
     }

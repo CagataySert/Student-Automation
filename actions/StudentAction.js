@@ -1,4 +1,5 @@
 import {
+    GET_STUDENT_DETAIL,
     GET_STUDENTS,
     ADD_NEW_STUDENT,
     UPDATE_STUDENT,
@@ -21,15 +22,40 @@ export const getStudents = () => {
     }
 }
 
-export const storeStudent = (data) => {
-    console.log('action');
+export const getStudentDetail = (id) => {
+    return (dispatch) => {
+        const response = _retrieveData();
+        response.then(data => {
+            const filteredData = data.filter((student) => student.id === id);
+            dispatch({
+                type: GET_STUDENT_DETAIL,
+                payload: filteredData
+            });
+        });
+    }
+}
 
-    console.log('action', data);
+export const storeStudent = (data) => {
     _storeData(data);
     return (dispatch) => {
         dispatch({
             type: ADD_NEW_STUDENT,
             payload: data
+        });
+    }
+}
+
+
+export const deleteStudent = (id) => {
+    return dispatch => {
+        const response = _retrieveData();
+        response.then(data => {
+            const filteredData = data.filter((student) => student.id !== id);
+            _storeData(filteredData);
+            dispatch({
+                type: DELETE_STUDENT,
+                payload: filteredData
+            });
         });
     }
 }
