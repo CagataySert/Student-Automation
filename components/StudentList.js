@@ -12,7 +12,6 @@ class StudentList extends Component {
 
     componentDidMount() {
         this.props.getStudents();
-        console.log(this.props.data);
     }
 
     handleAddNewStudentButton = () => {
