@@ -4,6 +4,7 @@ import NotesBox from './NotesBox';
 import { connect } from 'react-redux';
 import { storeNote } from '../actions/NoteAction';
 import { Actions } from 'react-native-router-flux';
+import styles from '../Styles/StudentNoteStyle';
 
 class StudentNote extends Component {
 
@@ -49,33 +50,9 @@ class StudentNote extends Component {
     }
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
-    courses: {
-        alignItems: 'center'
-    },
-    saveButtonView: {
-        alignItems: 'flex-end',
-        marginTop: 20,
-        marginRight: 20
-    },
-    saveButton: {
-        borderWidth: 1,
-        borderColor: 'white',
-        borderRadius: 10,
-        padding: 10
-    },
-    whiteText: {
-        color: 'white'
-    }
-});
-
-
 const mapStateToProps = ({ noteResponse }) => {
-    console.log(noteResponse.data);
-    return { data: 'aa' };
+    console.log('StudentNote', noteResponse);
+    return { data: noteResponse };
 }
 
 export default connect(mapStateToProps, { storeNote })(StudentNote);

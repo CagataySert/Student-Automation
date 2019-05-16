@@ -6,7 +6,6 @@ import { getStudents } from '../actions/StudentAction';
 import { connect } from 'react-redux';
 import styles from '../Styles/StudentListStyle';
 
-const { width } = Dimensions.get('window');
 
 class StudentList extends Component {
 
@@ -75,7 +74,7 @@ class StudentList extends Component {
 }
 
 const mapStateToProps = ({ studentResponse }) => {
-    console.log('srsp', studentResponse);
+    console.log('StudentList', studentResponse);
 
     return { data: studentResponse.data };
 }

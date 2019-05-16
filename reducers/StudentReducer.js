@@ -14,8 +14,6 @@ let INITIAL_STATE = {
 const StudentReducer = (state = INITIAL_STATE, { type, payload }) => {
     console.log('reducer', state, type, payload);
     switch (type) {
-        case GET_STUDENT_DETAIL:
-            return { ...state, data: [payload] };
         case GET_STUDENTS:
             return { ...state, data: [...state.data, payload] };
         case ADD_NEW_STUDENT:
