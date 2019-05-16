@@ -8,6 +8,13 @@ class NotesBox extends Component {
     state = {
 
     }
+
+    componentDidMount() {
+        console.log(this.props);
+
+    }
+
+
     handleTextChange = (score) => {
         const courseName = this.props.course;
         this.setState({
@@ -24,13 +31,25 @@ class NotesBox extends Component {
                     <Text style={styles.whiteText}>{this.props.course} : </Text>
                 </View>
 
-                <View style={styles.scoreView}>
-                    <TextInput
-                        style={styles.scoreInput}
-                        onChangeText={(text) => this.handleTextChange(text)}
-                        value={this.state.courseName}
-                    />
-                </View>
+                {
+                    this.props.score === undefined
+                        ? (
+                            <View style={styles.scoreView}>
+                                <TextInput
+                                    style={styles.scoreInput}
+                                    onChangeText={(text) => this.handleTextChange(text)}
+                                    value={this.state.courseName}
+                                />
+                            </View>
+                        )
+                        : (
+                            <View style={styles.scoreView}>
+                                <Text style={styles.whiteText}>{this.props.score}</Text>
+                            </View>
+                        )
+                }
+
+
             </View>
         )
     }

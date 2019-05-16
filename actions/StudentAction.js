@@ -22,19 +22,6 @@ export const getStudents = () => {
     }
 }
 
-// export const getStudentDetail = (id) => {
-//     return (dispatch) => {
-//         const response = _retrieveData();
-//         response.then(data => {
-//             const filteredData = data.filter((student) => student.id === id);
-//             dispatch({
-//                 type: GET_STUDENT_DETAIL,
-//                 payload: filteredData
-//             });
-//         });
-//     }
-// }
-
 export const storeStudent = (data) => {
     _storeData(data);
     return (dispatch) => {

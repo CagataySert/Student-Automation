@@ -8,6 +8,20 @@ import _storeData from '../components/StoreData';
 import _retrieveData from '../components/RetrieveData'
 
 
+
+export const getNotes = (id) => {
+    return (dispatch) => {
+        const response = _retrieveData();
+        response.then(data => {
+            dispatch({
+                type: GET_NOTES,
+                payload: data
+            });
+        });
+    }
+}
+
+
 export const storeNote = (scores, id) => {
     console.log(scores, id);
 
